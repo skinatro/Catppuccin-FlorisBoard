@@ -193,6 +193,10 @@ secondary: "lavender"
     "shape": "var(--shape)",
     "shadow-elevation": "2dp"
   },
+  "emoji-key-popup:focus": {
+    "background": "var(--surface-variant)",
+    "foreground": "var(--on-surface)"
+  },
   "emoji-tab": {
     "foreground": "var(--on-background)"
   },
