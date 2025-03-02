@@ -4,7 +4,7 @@ whiskers:
   matrix:
     - flavor
     - variant: ["", "_borderless"]
-  filename: "src/stylesheets/catppuccin_{{flavor.identifier}}{{variant}}.json"
+  filename: "dist/stylesheets/catppuccin_{{flavor.identifier}}{{variant}}.json"
 primary: "mauve"
 secondary: "lavender"
 overrides:
@@ -56,7 +56,7 @@ overrides:
   },
   "key[code={c:enter}]:pressed": {
     "background": "var(--secondary)",
-    "foreground": "var(--on-surface)"
+    "foreground": "var(--background)"
   },
   "key[code={c:space}]": {
     "background": "var(--surface)",
