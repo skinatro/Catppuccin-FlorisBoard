@@ -7,19 +7,6 @@ whiskers:
   filename: "dist/stylesheets/catppuccin_{{flavor.identifier}}{{variant}}.json"
 primary: "mauve"
 secondary: "lavender"
-overrides:
-  latte:
-    primary: "blue"
-    secondary: "lavender"
-  frappe:
-    primary: "red"
-    secondary: "maroon"
-  macchiato:
-    primary: "peach"
-    secondary: "yellow"
-  mocha:
-    primary: "red"
-    secondary: "maroon"
 ---
 {
   "@defines": {
@@ -72,14 +59,14 @@ overrides:
     "font-size": "12sp"
   },
   "key-popup": {
-    "background": "rgba(49,50,68,1)",
+    "background": "var(--surface)",
     "foreground": "var(--on-surface)",
     "font-size": "22sp",
     "shape": "var(--shape)",
     "shadow-elevation": "2dp"
   },
   "key-popup:focus": {
-    "background": "rgba(69,71,90,1)",
+    "background": "var(--surface-variant)",
     "foreground": "var(--on-surface)"
   },
   "smartbar-primary-actions-toggle": {
