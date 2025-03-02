@@ -165,7 +165,7 @@ overrides:
     "foreground": "var(--on-surface)"
   },
   "emoji-key-popup": {
-    "background": "rgba(117,117,117,1)",
+    "background": "var(--surface)",
     "foreground": "var(--on-surface)",
     "font-size": "22sp",
     "shape": "var(--shape)",
