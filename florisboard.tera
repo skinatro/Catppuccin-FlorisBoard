@@ -1,96 +1,139 @@
+---
+whiskers:
+  version: 2.5.1
+  matrix:
+    - flavor
+    - variant: ["", "_borderless"]
+  filename: "dist/stylesheets/catppuccin_{{flavor.identifier}}{{variant}}.json"
+primary: "mauve"
+secondary: "lavender"
+---
 {
   "@defines": {
-    "--primary": "rgba(243,139,168,1)",
-    "--primary-variant": "rgba(235,160,172,1)",
-    "--secondary": "rgba(245,224,220,1)",
-    "--secondary-variant": "rgba(128,76,0,1)",
-    "--background": "rgba(17,17,27,1)",
-    "--surface": "rgba(30,30,46,1)",
-    "--surface-variant": "rgba(49,50,68,0.8862745)",
-    "--on-background": "rgba(186,194,222,1)",
-    "--on-surface": "rgba(205,214,244,1)",
-    "--on-surface-variant": "rgba(166,173,200,1)",
-    "--shape": "rounded-corner(8dp,8dp,8dp,8dp)",
-    "--shape-variant": "rounded-corner(12dp,12dp,12dp,12dp)"
+    "--primary": "#{{flavor.colors[primary].hex}}",
+    "--primary-variant": "#{{flavor.colors[primary] | add(lightness=5) | get(key="hex") }}",
+    "--secondary": "#{{flavor.colors[secondary].hex}}",
+    "--background": "#{{crust.hex}}",
+    "--surface": "#{{base.hex}}",
+    "--surface-variant": "#{{surface0.hex}}",
+
+    "--on-background": "#{{subtext1.hex}}",
+    "--on-surface": "#{{text.hex}}",
+    "--on-surface-variant": "#{{subtext0.hex}}",
+
+    "--shape": "rounded-corner(8dp, 8dp, 8dp, 8dp)",
+    "--shape-variant": "rounded-corner(12dp, 12dp, 12dp, 12dp)"
   },
+
   "keyboard": {
     "background": "var(--background)"
   },
+
   "key": {
-    "background": "var(--surface)",
+    "background": "var(--{% if variant == "_borderless" %}background{% else %}surface{% endif %})",
     "foreground": "var(--on-surface)",
     "font-size": "22sp",
-    "shape": "var(--shape)",
-    "shadow-elevation": "2dp"
-  },
-  "key[code=10]": {
-    "background": "var(--primary)",
-    "foreground": "var(--background)"
-  },
-  "key[code=32]": {
-    "background": "var(--surface)",
-    "foreground": "var(--on-surface-variant)",
-    "font-size": "12sp"
-  },
-  "key[code=-11][shiftstate=3]": {
-    "foreground": "var(--secondary)"
+    {% if variant == "" %}"shadow-elevation": "2dp",{% endif %}
+    "shape": "var(--shape)"
   },
   "key:pressed": {
     "background": "var(--surface-variant)",
     "foreground": "var(--on-surface)"
   },
-  "key[code=10]:pressed": {
+  "key[code={c:enter}]": {
+    "background": "var(--primary)",
+    "foreground": "var(--background)"
+  },
+  "key[code={c:enter}]:pressed": {
     "background": "var(--primary-variant)",
-    "foreground": "var(--on-surface)"
+    "foreground": "var(--background)"
+  },
+  "key[code={c:space}]": {
+    "background": "var(--{% if variant == "_borderless" %}background{% else %}surface{% endif %})",
+    "foreground": "var(--on-surface-variant)",
+    "font-size": "12sp"
+  },
+  "key[code={c:shift}][shiftstate={sh:caps_lock}]": {
+    "foreground": "var(--secondary)"
   },
   "key-hint": {
-    "background": "rgba(0,0,0,0)",
+    "background": "transparent",
     "foreground": "var(--on-surface-variant)",
     "font-size": "12sp"
   },
   "key-popup": {
-    "background": "rgba(49,50,68,1)",
+    "background": "var(--surface)",
     "foreground": "var(--on-surface)",
     "font-size": "22sp",
     "shape": "var(--shape)",
     "shadow-elevation": "2dp"
   },
   "key-popup:focus": {
-    "background": "rgba(69,71,90,1)",
+    "background": "var(--surface-variant)",
     "foreground": "var(--on-surface)"
   },
-  "smartbar-primary-actions-toggle": {
+
+  "smartbar-shared-actions-toggle": {
     "background": "var(--surface)",
     "foreground": "var(--on-surface)",
     "shape": "circle()",
     "shadow-elevation": "2dp"
   },
-  "smartbar-secondary-actions-toggle": {
-    "background": "rgba(0,0,0,0)",
+  "smartbar-extended-actions-toggle": {
+    "background": "transparent",
     "foreground": "var(--on-surface-variant)",
     "shape": "circle()"
   },
-  "smartbar-quick-action": {
-    "background": "rgba(0,0,0,0)",
-    "foreground": "var(--on-background)",
-    "shape": "circle()"
-  },
-  "smartbar-key": {
-    "background": "rgba(0,0,0,0)",
+  "smartbar-action-key": {
+    "background": "transparent",
     "foreground": "var(--on-background)",
     "font-size": "18sp",
     "shape": "var(--shape)"
   },
-  "smartbar-key:pressed": {
+  "smartbar-action-key:pressed": {
     "background": "var(--surface)",
     "foreground": "var(--on-surface)"
   },
-  "smartbar-key:disabled": {
-    "background": "rgba(0,0,0,0)",
-    "foreground": "rgba(220,220,220,0.28235295)"
+  "smartbar-action-key:disabled": {
+    "background": "transparent",
+    "foreground": "#12121248"
+  },
+  "smartbar-action-tile": {
+    "background": "transparent",
+    "foreground": "var(--on-background)",
+    "font-size": "18sp",
+    "shape": "var(--shape)"
+  },
+  "smartbar-action-tile:pressed": {
+    "background": "var(--surface)",
+    "foreground": "var(--on-surface)"
+  },
+  "smartbar-action-tile:disabled": {
+    "background": "transparent",
+    "foreground": "#12121248"
+  },
+  "smartbar-actions-overflow-customize-button": {
+    "background": "var(--surface)",
+    "foreground": "var(--on-surface)",
+    "font-size": "14sp",
+    "shape": "circle()",
+    "shadow-elevation": "2dp"
+  },
+  "smartbar-actions-editor": {
+    "background": "var(--background)",
+    "shape": "rounded-corner(24dp, 24dp, 0dp, 0dp)"
+  },
+  "smartbar-actions-editor-header": {
+    "background": "var(--surface)",
+    "foreground": "var(--on-surface)",
+    "font-size": "16sp"
+  },
+  "smartbar-actions-editor-subheader": {
+    "foreground": "var(--on-background)",
+    "font-size": "16sp"
   },
   "smartbar-candidate-word": {
-    "background": "rgba(0,0,0,0)",
+    "background": "transparent",
     "foreground": "var(--on-background)",
     "font-size": "14sp",
     "shape": "rectangle()"
@@ -100,10 +143,10 @@
     "foreground": "var(--on-background)"
   },
   "smartbar-candidate-clip": {
-    "background": "rgba(0,0,0,0)",
+    "background": "transparent",
     "foreground": "var(--on-background)",
     "font-size": "14sp",
-    "shape": "rounded-corner(8%,8%,8%,8%)"
+    "shape": "rounded-corner(8%, 8%, 8%, 8%)"
   },
   "smartbar-candidate-clip:pressed": {
     "background": "var(--surface)",
@@ -112,8 +155,9 @@
   "smartbar-candidate-spacer": {
     "foreground": "var(--surface)"
   },
+
   "clipboard-header": {
-    "background": "rgba(0,0,0,0)",
+    "background": "transparent",
     "foreground": "var(--on-surface)",
     "font-size": "16sp"
   },
@@ -131,8 +175,9 @@
     "shape": "var(--shape-variant)",
     "shadow-elevation": "2dp"
   },
+
   "emoji-key": {
-    "background": "rgba(0,0,0,0)",
+    "background": "transparent",
     "foreground": "var(--on-background)",
     "font-size": "22sp",
     "shape": "var(--shape)"
@@ -142,11 +187,15 @@
     "foreground": "var(--on-surface)"
   },
   "emoji-key-popup": {
-    "background": "rgba(117,117,117,1)",
+    "background": "var(--surface)",
     "foreground": "var(--on-surface)",
     "font-size": "22sp",
     "shape": "var(--shape)",
     "shadow-elevation": "2dp"
+  },
+  "emoji-key-popup:focus": {
+    "background": "var(--surface-variant)",
+    "foreground": "var(--on-surface)"
   },
   "emoji-tab": {
     "foreground": "var(--on-background)"
@@ -154,29 +203,33 @@
   "emoji-tab:focus": {
     "foreground": "var(--primary)"
   },
+
   "extracted-landscape-input-action": {
     "background": "var(--surface)",
     "foreground": "var(--on-surface)",
     "shape": "rounded-corner(4dp,4dp,4dp,4dp)"
   },
   "extracted-landscape-input-field": {
-    "background": "rgba(0,0,0,0)",
+    "background": "transparent",
     "foreground": "var(--on-background)",
     "font-size": "16sp",
     "shape": "rounded-corner(12dp,12dp,12dp,12dp)",
-    "border-color": "var(--secondary-variant)",
+    "border-color": "var(--secondary)",
     "border-width": "1dp"
   },
   "extracted-landscape-input-layout": {
     "background": "var(--background)"
   },
+
   "glide-trail": {
-    "foreground": "var(--primary-variant)"
+    "foreground": "var(--secondary)"
   },
+
   "one-handed-panel": {
     "background": "var(--background)",
     "foreground": "var(--on-surface)"
   },
+
   "system-nav-bar": {
     "background": "var(--background)"
   }

@@ -29,13 +29,15 @@ jobs:
     if: ${{ needs.release-please.outputs.release_created }}
     steps:
       - uses: actions/checkout@v4
-
       - uses: extractions/setup-just@v2
+      - uses: catppuccin/setup-whiskers@v1.0.0
+        with:
+          whiskers-version: "2.5.1"
 
       - name: Build
         run: just build
 
-      - name: Create Zip
+      - name: Create Archive
         run: just zip
 
       - name: Upload Zip

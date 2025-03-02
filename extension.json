@@ -1,0 +1,91 @@
+{
+  "$": "ime.extension.theme",
+  "meta": {
+    "id": "com.catppuccin.florisboard",
+    "version": "0.1.0",
+    "title": "Catppuccin",
+    "description": "🥀 Soothing pastel theme for FlorisBoard",
+    "keywords": [
+      "pastel catppuccin mocha latte frappe macchiato"
+    ],
+    "homepage": "https://github.com/catppuccin/florisboard",
+    "issueTracker": "https://github.com/catppuccin/florisboard/issues",
+    "maintainers": [
+      "skinatro",
+      "sgoudham"
+    ],
+    "license": "MIT"
+  },
+  "themes": [
+    {
+      "id": "catppuccin_latte",
+      "label": "Catppuccin Latte",
+      "authors": [
+        "skinatro",
+        "sgoudham"
+      ],
+      "isNight": false
+    },
+    {
+      "id": "catppuccin_latte_borderless",
+      "label": "Catppuccin Latte (Borderless)",
+      "authors": [
+        "skinatro",
+        "sgoudham"
+      ],
+      "isNight": false,
+      "isBorderless": true
+    },
+    {
+      "id": "catppuccin_frappe",
+      "label": "Catppuccin Frappe",
+      "authors": [
+        "skinatro",
+        "sgoudham"
+      ]
+    },
+    {
+      "id": "catppuccin_frappe_borderless",
+      "label": "Catppuccin Frappe (Borderless)",
+      "authors": [
+        "skinatro",
+        "sgoudham"
+      ],
+      "isBorderless": true
+    },
+    {
+      "id": "catppuccin_macchiato",
+      "label": "Catppuccin Macchiato",
+      "authors": [
+        "skinatro",
+        "sgoudham"
+      ]
+    },
+    {
+      "id": "catppuccin_macchiato_borderless",
+      "label": "Catppuccin Macchiato (Borderless)",
+      "authors": [
+        "skinatro",
+        "sgoudham"
+      ],
+      "isBorderless": true
+    },
+    {
+      "id": "catppuccin_mocha",
+      "label": "Catppuccin Mocha",
+      "authors": [
+        "skinatro",
+        "sgoudham"
+      ]
+    },
+    {
+      "id": "catppuccin_mocha_borderless",
+      "label": "Catppuccin Mocha (Borderless)",
+      "authors": [
+        "skinatro",
+        "sgoudham"
+      ],
+      "isBorderless": true
+    }
+  ]
+}
