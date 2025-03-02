@@ -23,9 +23,11 @@ secondary: "lavender"
     "--shape": "rounded-corner(8dp, 8dp, 8dp, 8dp)",
     "--shape-variant": "rounded-corner(12dp, 12dp, 12dp, 12dp)"
   },
+
   "keyboard": {
     "background": "var(--background)"
   },
+
   "key": {
     "background": "var(--surface)",
     "foreground": "var(--on-surface)",
@@ -69,6 +71,7 @@ secondary: "lavender"
     "background": "var(--surface-variant)",
     "foreground": "var(--on-surface)"
   },
+
   "smartbar-primary-actions-toggle": {
     "background": "var(--surface)",
     "foreground": "var(--on-surface)",
@@ -122,6 +125,7 @@ secondary: "lavender"
   "smartbar-candidate-spacer": {
     "foreground": "var(--surface)"
   },
+
   "clipboard-header": {
     "background": "transparent",
     "foreground": "var(--on-surface)",
@@ -141,6 +145,7 @@ secondary: "lavender"
     "shape": "var(--shape-variant)",
     "shadow-elevation": "2dp"
   },
+
   "emoji-key": {
     "background": "transparent",
     "foreground": "var(--on-background)",
@@ -164,6 +169,7 @@ secondary: "lavender"
   "emoji-tab:focus": {
     "foreground": "var(--primary)"
   },
+
   "extracted-landscape-input-action": {
     "background": "var(--surface)",
     "foreground": "var(--on-surface)",
@@ -180,13 +186,16 @@ secondary: "lavender"
   "extracted-landscape-input-layout": {
     "background": "var(--background)"
   },
+
   "glide-trail": {
     "foreground": "var(--secondary)"
   },
+
   "one-handed-panel": {
     "background": "var(--background)",
     "foreground": "var(--on-surface)"
   },
+  
   "system-nav-bar": {
     "background": "var(--background)"
   }
