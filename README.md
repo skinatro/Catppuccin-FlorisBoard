@@ -67,9 +67,6 @@
 For example, to change the enter key colour, set the `Primary Color` key to your
 desired color.
 
-If you want to make it match the background (i.e. make it borderless) then
-change `Key code = [10]` value from `Primary Color` to `Common Surface`
-
 ## 💝 Thanks to
 
 - [Mirage](https://github.com/skinatro)
