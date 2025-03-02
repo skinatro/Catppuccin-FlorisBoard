@@ -10,7 +10,8 @@ clean:
   rm -rfv ./dist
 
 # Minify JSON files and put source files into "./dist"
-build:
+build: clean
+  whiskers florisboard.tera
   mkdir -p dist/stylesheets
   cat src/extension.json | jq -c > dist/extension.json
   for file in `ls src/stylesheets`; do \
@@ -18,5 +19,6 @@ build:
   done
 
 # Zip "./dist" into the "./flex" format
-zip:
+zip: build
+  rm -v catppuccin-{{version}}.flex || true
   cd dist && zip -r ../catppuccin-{{version}}.flex .

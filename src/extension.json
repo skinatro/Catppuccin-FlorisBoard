@@ -11,70 +11,79 @@
     "homepage": "https://github.com/catppuccin/florisboard",
     "issueTracker": "https://github.com/catppuccin/florisboard/issues",
     "maintainers": [
-      "skinatro"
+      "skinatro",
+      "sgoudham"
     ],
     "license": "MIT"
   },
   "themes": [
     {
-      "id": "ctp_latte",
-      "label": "Latte",
+      "id": "catppuccin_latte",
+      "label": "Catppuccin Latte",
       "authors": [
-        "skinatro"
+        "skinatro",
+        "sgoudham"
       ],
       "isNight": false
     },
     {
-      "id": "ctp_latte_borderless",
-      "label": "Latte (Borderless)",
+      "id": "catppuccin_latte_borderless",
+      "label": "Catppuccin Latte (Borderless)",
       "authors": [
-        "skinatro"
+        "skinatro",
+        "sgoudham"
       ],
       "isNight": false,
       "isBorderless": true
     },
     {
-      "id": "ctp_mocha",
-      "label": "Mocha",
+      "id": "catppuccin_frappe",
+      "label": "Catppuccin Frappe",
       "authors": [
-        "skinatro#"
+        "skinatro",
+        "sgoudham"
       ]
     },
     {
-      "id": "ctp_mocha_borderless",
-      "label": "Mocha (Borderless)",
+      "id": "catppuccin_frappe_borderless",
+      "label": "Catppuccin Frappe (Borderless)",
       "authors": [
-        "skinatro"
+        "skinatro",
+        "sgoudham"
       ],
       "isBorderless": true
     },
     {
-      "id": "ctp_frappe",
-      "label": "Frappe",
+      "id": "catppuccin_macchiato",
+      "label": "Catppuccin Macchiato",
       "authors": [
-        "skinatro"
+        "skinatro",
+        "sgoudham"
       ]
     },
     {
-      "id": "ctp_frappe_borderless",
-      "label": "Frappe (Borderless)",
+      "id": "catppuccin_macchiato_borderless",
+      "label": "Catppuccin Macchiato (Borderless)",
       "authors": [
-        "skinatro"
+        "skinatro",
+        "sgoudham"
       ],
       "isBorderless": true
     },
     {
-      "id": "ctp_macchiato",
-      "label": "Macchiato",
+      "id": "catppuccin_mocha",
+      "label": "Catppuccin Mocha",
       "authors": [
-        "skinatro"
+        "skinatro",
+        "sgoudham"
       ]
     },
     {
-      "id": "ctp_macchiato_borderless",
-      "label": "Macchiato (Borderless)",
+      "id": "catppuccin_mocha_borderless",
+      "label": "Catppuccin Mocha (Borderless)",
       "authors": [
-        "skinatro"
+        "skinatro",
+        "sgoudham"
       ],
       "isBorderless": true
     }
