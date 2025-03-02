@@ -30,11 +30,11 @@ secondary: "lavender"
   },
 
   "key": {
-    "background": "var(--surface)",
+    "background": "var(--{% if variant == "_borderless" %}background{% else %}surface{% endif %})",
     "foreground": "var(--on-surface)",
     "font-size": "22sp",
-    "shape": "var(--shape)",
-    "shadow-elevation": "2dp"
+    {% if variant == "" %}"shadow-elevation": "2dp",{% endif %}
+    "shape": "var(--shape)"
   },
   "key:pressed": {
     "background": "var(--surface-variant)",
@@ -49,7 +49,7 @@ secondary: "lavender"
     "foreground": "var(--background)"
   },
   "key[code={c:space}]": {
-    "background": "var(--surface)",
+    "background": "var(--{% if variant == "_borderless" %}background{% else %}surface{% endif %})",
     "foreground": "var(--on-surface-variant)",
     "font-size": "12sp"
   },
