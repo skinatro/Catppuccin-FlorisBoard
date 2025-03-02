@@ -3,7 +3,7 @@ set export
 _default:
   @just --list
 
-version := `jq '.meta.version' src/extension.json | tr -d '"'`
+version := `jq '.meta.version' extension.json | tr -d '"'`
 
 # Remove the './dist' directory
 clean:
@@ -12,7 +12,7 @@ clean:
 # Minify JSON files and put source files into "./dist"
 build: clean
   whiskers florisboard.tera
-  cat src/extension.json | jq -c > dist/extension.json
+  cat extension.json | jq -c > dist/extension.json
   for file in `ls dist/stylesheets`; do \
       cat dist/stylesheets/$file | jq -c > dist/stylesheets/minify_$file; \
       mv -v dist/stylesheets/minify_$file dist/stylesheets/$file; \
