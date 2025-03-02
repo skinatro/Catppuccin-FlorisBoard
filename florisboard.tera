@@ -11,6 +11,7 @@ secondary: "lavender"
 {
   "@defines": {
     "--primary": "#{{flavor.colors[primary].hex}}",
+    "--primary-variant": "#{{flavor.colors[primary] | add(lightness=5) | get(key="hex") }}",
     "--secondary": "#{{flavor.colors[secondary].hex}}",
     "--background": "#{{crust.hex}}",
     "--surface": "#{{base.hex}}",
@@ -44,7 +45,7 @@ secondary: "lavender"
     "foreground": "var(--background)"
   },
   "key[code={c:enter}]:pressed": {
-    "background": "var(--secondary)",
+    "background": "var(--primary-variant)",
     "foreground": "var(--background)"
   },
   "key[code={c:space}]": {
@@ -195,7 +196,7 @@ secondary: "lavender"
     "background": "var(--background)",
     "foreground": "var(--on-surface)"
   },
-  
+
   "system-nav-bar": {
     "background": "var(--background)"
   }
